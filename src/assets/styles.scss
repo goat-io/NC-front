@@ -1,0 +1,44 @@
+// LOGIN
+.bg-plum-plate {
+  background-image: linear-gradient(
+    135deg,
+    #5b1948b3 0%,
+    #5b1948 100%
+  ) !important;
+}
+
+.mdl-card.mdl-shadow--2dp.firebaseui-container.firebaseui-id-page-phone-sign-in-start,
+.mdl-card.mdl-shadow--2dp.firebaseui-container.firebaseui-id-page-phone-sign-in-finish {
+  box-shadow: none;
+}
+
+.app-logo-inverse,
+.app-header.header-text-light .app-header__logo .logo-src {
+  width: 300px;
+  mask: url(/logo.svg);
+  display: block;
+  background-color: #ffd7d6;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  display: block;
+}
+
+.app-header.header-text-light .app-header__logo .logo-src {
+  width: 80%;
+}
+
+.BurgerInner,
+.BurgerInner::before,
+.BurgerInner::after {
+  background-color: white !important;
+}
+// App header
+
+.bg-royal {
+  background-image: linear-gradient(to right, #5b1948f0, #5b1948) !important;
+}
+
+.input-holder.search-menu {
+  background: #20334c !important;
+}

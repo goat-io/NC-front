@@ -1,0 +1,32 @@
+import React, { Fragment } from "react";
+
+import { Form } from "reactstrap";
+import { PhoneSignIn } from "./PhoneSignIn";
+
+export const LoginForm = () => {
+  return (
+    <Fragment>
+      <div className="modal-dialog w-100 mx-auto">
+        <div className="modal-content">
+          <div className="modal-body">
+            <div className="h5 modal-title text-center">
+              <h4 className="mt-2">
+                <div>Welcome back</div>
+              </h4>
+            </div>
+            <div className="divider" />
+            <Form>
+              <PhoneSignIn />
+            </Form>
+          </div>
+          <div className="modal-footer clearfix">
+            <div className="float-right"></div>
+          </div>
+        </div>
+      </div>
+      <div className="text-center text-white opacity-8 mt-3">
+        Copyright &copy; NC-challenge 2020
+      </div>
+    </Fragment>
+  );
+};
