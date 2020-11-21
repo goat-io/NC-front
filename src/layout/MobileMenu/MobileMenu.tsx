@@ -1,31 +1,21 @@
 import React, { Fragment, useState } from "react";
 import { observer, useObserver } from "mobx-react";
 
-import { Button } from "reactstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Slider } from "react-burgers";
-import cx from "classnames";
-import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
+import { UserBox } from "../Header/Components/UserBox";
 import { useThemeStore } from "../../stores/ThemeStore";
 
 const useThemeData = () => {
   const { themeStore } = useThemeStore();
 
   return useObserver(() => ({
-    toggleSecondaryMenuMobile: themeStore.toggleSecondaryMenuMobile,
-    activeSecondaryMenuMobile: themeStore.activeSecondaryMenuMobile,
     toggleMobileSmall: themeStore.toggleMobileSmall,
     toggleMobileSidebar: themeStore.toggleMobileSidebar,
   }));
 };
 
 export const AppMobileMenu = observer(() => {
-  const {
-    toggleMobileSidebar,
-    toggleMobileSmall,
-    activeSecondaryMenuMobile,
-    toggleSecondaryMenuMobile,
-  } = useThemeData();
+  const { toggleMobileSidebar, toggleMobileSmall } = useThemeData();
   const [isActive, setIsActive] = useState(false);
 
   return (
@@ -44,18 +34,7 @@ export const AppMobileMenu = observer(() => {
       </div>
       <div className="app-header__menu">
         <span onClick={toggleMobileSmall}>
-          <Button
-            size="sm"
-            className={cx("btn-icon btn-icon-only", {
-              active: activeSecondaryMenuMobile,
-            })}
-            color="primary"
-            onClick={toggleSecondaryMenuMobile}
-          >
-            <div className="btn-icon-wrapper">
-              <FontAwesomeIcon icon={faEllipsisV} />
-            </div>
-          </Button>
+          <UserBox />
         </span>
       </div>
     </Fragment>

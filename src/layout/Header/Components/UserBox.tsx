@@ -46,6 +46,10 @@ export const UserBox = observer(() => {
     history.push("/login");
   };
 
+  const displayName = user.profile?.name || user.phoneNumber;
+  const displayNameEllipsis =
+    displayName.length < 11 ? displayName : displayName.substring(0, 7) + "...";
+
   return (
     <Fragment>
       <div className="header-btn-lg pr-0">
@@ -60,7 +64,7 @@ export const UserBox = observer(() => {
                     src={user.profilePicture || "/profile.png"}
                     alt=""
                   />
-                  <span>{user.profile?.name || user.phoneNumber}</span>
+                  <span>{displayNameEllipsis}</span>
                   <FontAwesomeIcon
                     className="ml-2 opacity-8"
                     icon={faAngleDown}

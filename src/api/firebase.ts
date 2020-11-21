@@ -13,6 +13,9 @@ const config = {
 
 if (!firebase.apps.length) {
   firebase.initializeApp(config);
+  firebase.auth().settings.appVerificationDisabledForTesting = !!(
+    process.env.REACT_APP_SKIP_VALIDATION === "true"
+  );
   firebase.auth().useDeviceLanguage();
 }
 

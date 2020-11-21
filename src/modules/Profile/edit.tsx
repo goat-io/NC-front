@@ -81,7 +81,10 @@ export const ProfileEdit = observer(() => {
     <Fragment>
       <ProfileTitle />
       <Container fluid>
-        <Card className="main-card mb-3 w-50">
+        <Card
+          className="main-card  col-lg-6 col-md-12 col-sm-12"
+          style={{ margin: "auto" }}
+        >
           <CardHeader>Your profile</CardHeader>
           <CardBody>
             <Form>
@@ -89,11 +92,12 @@ export const ProfileEdit = observer(() => {
                 <ProfilePicture />
               </div>
               <FormGroup row>
-                <Label for="firstName" sm={3}>
+                <Label for="name" sm={3}>
                   Name
                 </Label>
                 <Col sm={9}>
                   <Input
+                    id="name"
                     invalid={inputHasChanged && !!error}
                     valid={inputHasChanged && !error}
                     disabled={!edit}
@@ -109,11 +113,12 @@ export const ProfileEdit = observer(() => {
                 </Col>
               </FormGroup>
               <FormGroup row>
-                <Label for="lastName" sm={3}>
+                <Label for="email" sm={3}>
                   Email
                 </Label>
                 <Col sm={9}>
                   <Input
+                    id="email"
                     invalid={inputHasChanged && !!emailError}
                     valid={inputHasChanged && !emailError}
                     disabled={!edit}
@@ -132,7 +137,7 @@ export const ProfileEdit = observer(() => {
             <div className="float-right">
               {edit ? (
                 <>
-                  <Button color="secondary" onClick={handleCancel}>
+                  <Button className="btn-secondary" onClick={handleCancel}>
                     <span>Cancel</span>
                   </Button>
                   <LaddaButton
@@ -148,7 +153,7 @@ export const ProfileEdit = observer(() => {
               ) : (
                 <Button color="warning" onClick={() => setEdit(true)}>
                   <FontAwesomeIcon className="mr-2" icon={faPen} />
-                  <span>Edit Profile</span>
+                  <span>Edit profile</span>
                 </Button>
               )}
             </div>

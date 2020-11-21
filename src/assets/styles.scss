@@ -42,3 +42,10 @@
 .input-holder.search-menu {
   background: #20334c !important;
 }
+
+@media (max-width: 991.98px) {
+  .popover,
+  .dropdown-menu {
+    top: 25% !important;
+  }
+}

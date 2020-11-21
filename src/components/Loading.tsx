@@ -9,7 +9,7 @@ export const Loading = () => {
           <Loader type="ball-triangle-path" active={true} />
         </div>
         <h6 className="mt-5">
-          Loading the app!!!!
+          Loading the app!
           <small>Give us a few seconds to set things up!</small>
         </h6>
       </div>

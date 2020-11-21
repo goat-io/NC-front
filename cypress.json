@@ -1,0 +1,9 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "requestTimeout": 10000,
+  "video": false,
+  "defaultCommandTimeout": 8000,
+  "env": {
+    "REACT_APP_SKIP_VALIDATION": true
+  }
+}

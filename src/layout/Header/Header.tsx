@@ -12,7 +12,6 @@ const useThemeData = () => {
   const { themeStore } = useThemeStore();
   return useObserver(() => ({
     headerBackgroundColor: themeStore.headerBackgroundColor,
-    enableMobileMenuSmall: themeStore.enableMobileMenuSmall,
     enableHeaderShadow: themeStore.enableHeaderShadow,
   }));
 };
@@ -20,7 +19,6 @@ const useThemeData = () => {
 export const Header = observer(() => {
   let {
     headerBackgroundColor,
-    enableMobileMenuSmall,
     enableHeaderShadow,
   } = useThemeData();
 
@@ -41,7 +39,7 @@ export const Header = observer(() => {
 
         <div
           className={cx("app-header__content", {
-            "header-mobile-open": enableMobileMenuSmall,
+            "header-mobile-open": false,
           })}
         >
           <div className="app-header-right">
