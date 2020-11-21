@@ -4,7 +4,9 @@
 
 - Built with [Create React App](https://github.com/facebook/create-react-app)
 - All request are performed with [Axios](https://github.com/axios/axios)
-- and [Firebase](https://firebase.google.com) as authentication
+- [Firebase](https://firebase.google.com) authentication
+- [Cypress.io](https://www.cypress.io/) for E2E testing
+- [Github Actions](https://github.com/features/actions) for CI/CD
 
 ## Installation
 

@@ -24,9 +24,10 @@ Cypress.Commands.add('login', () => {
   cy.get('#ui-sign-in-phone-number-input')
     .type('993254385')
     .should('have.value', '993254385')
-  cy.wait(500)
+  cy.wait(1000)
 
   cy.get('.firebaseui-id-submit').click()
+  cy.wait(1000)
 
   cy.get('#ui-sign-in-phone-confirmation-code-input')
     .type('123456')
