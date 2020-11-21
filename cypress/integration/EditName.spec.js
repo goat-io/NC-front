@@ -12,7 +12,7 @@ context('Name', () => {
 
     cy.get('button.ladda-button.ml-2.btn.btn-primary').click()
 
-    cy.contains(`Ignacio Cabrera ${randomNumber}'s profile`)
+    cy.contains(`Your profile was saved!`)
     cy.logout()
   })
 })

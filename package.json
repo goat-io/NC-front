@@ -5,7 +5,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "pm2": "npx pm2 --name ncChallenge start npm -- start",
     "pm2:kill": "npx pm2 delete all",
