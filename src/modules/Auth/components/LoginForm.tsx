@@ -1,9 +1,11 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from 'react'
 
-import { Form } from "reactstrap";
-import { PhoneSignIn } from "./PhoneSignIn";
+import { Form } from 'reactstrap'
+import { PhoneSignIn } from './PhoneSignIn'
+import { useTranslation } from 'react-i18next'
 
 export const LoginForm = () => {
+  const { t } = useTranslation()
   return (
     <Fragment>
       <div className="modal-dialog w-100 mx-auto">
@@ -11,7 +13,7 @@ export const LoginForm = () => {
           <div className="modal-body">
             <div className="h5 modal-title text-center">
               <h4 className="mt-2">
-                <div>Welcome back</div>
+                <div>{t('Welcome back')}</div>
               </h4>
             </div>
             <div className="divider" />
@@ -28,5 +30,5 @@ export const LoginForm = () => {
         Copyright &copy; NC-challenge 2020
       </div>
     </Fragment>
-  );
-};
+  )
+}

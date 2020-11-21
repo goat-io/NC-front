@@ -1,5 +1,19 @@
 {
   "Choose Language": "Choose Language",
-  "Organization": "Organization",
-  "Popular Languages": "Popular Languages"
+  "Popular Languages": "Popular Languages",
+  "Welcome back": "Welcome back",
+  "Your profile was saved!": "Your profile was saved!",
+  "Your profile": "Your profile",
+  "Name": "Name",
+  "Email": "Email",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "Edit profile": "Edit profile",
+  "Email is required": "Email is required",
+  "Email is not valid": "Email is not valid",
+  "Name is required": "Name is required",
+  "PROFILE_WITH_NAME": "{{name}}`s profile",
+  "Logout": "Logout",
+  "Account": "Account",
+  "Profile": "Profile"
 }

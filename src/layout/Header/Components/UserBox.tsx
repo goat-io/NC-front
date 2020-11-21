@@ -6,49 +6,51 @@ import {
   NavItem,
   NavLink,
   UncontrolledButtonDropdown,
-} from "reactstrap";
-import { Link, useHistory } from "react-router-dom";
-import React, { Fragment } from "react";
-import { observer, useObserver } from "mobx-react";
+} from 'reactstrap'
+import { Link, useHistory } from 'react-router-dom'
+import React, { Fragment } from 'react'
+import { observer, useObserver } from 'mobx-react'
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import PerfectScrollbar from "react-perfect-scrollbar";
-import { auth } from "../../../api/firebase";
-import city3 from "../../../assets/architectui/utils/images/dropdown-header/city3.jpg";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import { notifyError } from "../../../components/notifications/error";
-import to from "await-to-js";
-import { useAuthStore } from "../../../modules/Auth/store/AuthenticationStore";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PerfectScrollbar from 'react-perfect-scrollbar'
+import { auth } from '../../../api/firebase'
+import city3 from '../../../assets/architectui/utils/images/dropdown-header/city3.jpg'
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import { notifyError } from '../../../components/notifications/error'
+import to from 'await-to-js'
+import { useAuthStore } from '../../../modules/Auth/store/AuthenticationStore'
+import { useTranslation } from 'react-i18next'
 
 const useStores = () => {
-  const { AuthStore } = useAuthStore();
+  const { AuthStore } = useAuthStore()
 
   return useObserver(() => ({
     user: AuthStore.user,
     logOut: AuthStore.logOut,
-  }));
-};
+  }))
+}
 
 export const UserBox = observer(() => {
-  const history = useHistory();
-  const { logOut, user } = useStores();
+  const history = useHistory()
+  const { logOut, user } = useStores()
+  const { t } = useTranslation()
 
   if (!user) {
-    return null;
+    return null
   }
 
   const handleLogOut = async () => {
-    logOut();
-    const [error] = await to(auth.signOut());
+    logOut()
+    const [error] = await to(auth.signOut())
     if (error) {
-      notifyError(error.message);
+      notifyError(error.message)
     }
-    history.push("/login");
-  };
+    history.push('/login')
+  }
 
-  const displayName = user.profile?.name || user.phoneNumber;
+  const displayName = user.profile?.name || user.phoneNumber
   const displayNameEllipsis =
-    displayName.length < 11 ? displayName : displayName.substring(0, 7) + "...";
+    displayName.length < 11 ? displayName : displayName.substring(0, 7) + '...'
 
   return (
     <Fragment>
@@ -61,7 +63,7 @@ export const UserBox = observer(() => {
                   <img
                     width={42}
                     className="rounded-circle mr-3"
-                    src={user.profilePicture || "/profile.png"}
+                    src={user.profilePicture || '/profile.png'}
                     alt=""
                   />
                   <span>{displayNameEllipsis}</span>
@@ -76,7 +78,7 @@ export const UserBox = observer(() => {
                       <div
                         className="menu-header-image opacity-2"
                         style={{
-                          backgroundImage: "url(" + city3 + ")",
+                          backgroundImage: 'url(' + city3 + ')',
                         }}
                       />
                       <div className="menu-header-content text-left">
@@ -86,7 +88,7 @@ export const UserBox = observer(() => {
                               <img
                                 width={42}
                                 className="rounded-circle"
-                                src={user.profilePicture || "/profile.png"}
+                                src={user.profilePicture || '/profile.png'}
                                 alt=""
                               />
                             </div>
@@ -100,7 +102,7 @@ export const UserBox = observer(() => {
                                 onClick={handleLogOut}
                                 className="btn-pill btn-shadow btn-shine bg-secondary"
                               >
-                                Logout
+                                {t('Logout')}
                               </Button>
                             </div>
                           </div>
@@ -111,15 +113,17 @@ export const UserBox = observer(() => {
                   <div
                     className="scroll-area-xs"
                     style={{
-                      height: "150px",
+                      height: '150px',
                     }}
                   >
                     <PerfectScrollbar>
                       <Nav vertical>
-                        <NavItem className="nav-item-header">Account</NavItem>
+                        <NavItem className="nav-item-header">
+                          {t('Account')}
+                        </NavItem>
                         <NavItem>
                           <NavLink tag="div">
-                            <Link to="/profile">Profile</Link>
+                            <Link to="/profile">{t('Profile')}</Link>
                           </NavLink>
                         </NavItem>
                       </Nav>
@@ -132,5 +136,5 @@ export const UserBox = observer(() => {
         </div>
       </div>
     </Fragment>
-  );
-});
+  )
+})

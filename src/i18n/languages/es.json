@@ -1,0 +1,19 @@
+{
+  "Choose Language": "Elige un idioma",
+  "Popular Languages": "Idiomas populares",
+  "Welcome back": "Bienvenida",
+  "Your profile was saved!": "Perfil guardado!",
+  "Your profile": "Tu perfil",
+  "Name": "Nombre",
+  "Email": "Email",
+  "Cancel": "Cancelar",
+  "Save": "Guardar",
+  "Edit profile": "Editar perfil",
+  "Email is required": "Email es obligatorio",
+  "Email is not valid": "Email no es válido",
+  "Name is required": "Name es obligatorio",
+  "PROFILE_WITH_NAME": "Perfil de {{name}}",
+  "Logout": "Salir",
+  "Account": "Cuenta",
+  "Profile": "Perfil"
+}
