@@ -11,6 +11,10 @@
 ## Installation
 
 ```bash
+$ npm install
+
+or
+
 $ yarn
 ```
 
@@ -21,13 +25,23 @@ $ yarn
 
 ```bash
 # Run the server in development mode
+$ npm run start
+
+or
+
 $ yarn start
 ```
 
 ## Test
 
 ```bash
+# Run Cypress e2e tests
+$ npm run e2e
 
+or
+
+# Run the server in development mode
+$ yarn e2e
 ```
 
 ## License
